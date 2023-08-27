@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Advice generator app</title>
+  </head>
+  <body>
+    <div class="card">
+      <p class="loading">Loading...</p>
+
+      <main>
+        <h3 id="advice-id"></h3>
+        <p id="advice-text"></p>
+
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="./images/pattern-divider-mobile.svg"
+          />
+          <img src="./images/pattern-divider-desktop.svg" alt="" />
+        </picture>
+
+        <div class="button-wrapper">
+          <button id="generator-button">
+            <img src="./images/icon-dice.svg" alt="" />
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

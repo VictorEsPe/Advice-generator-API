@@ -1,0 +1,100 @@
+:root {
+  --Light-Cyan: hsl(193, 38%, 86%);
+  --Neon-Green: rgb(82, 255, 168);
+  --Grayish-Blue: hsl(217, 19%, 38%);
+  --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+  --Dark-Blue: hsl(218, 23%, 16%);
+}
+
+* {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Dark-Blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--Dark-Grayish-Blue);
+  color: var(--Light-Cyan);
+  border-radius: 0.9375rem;
+  width: 32.8125rem;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 6.25rem;
+  font-size: 1.75rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.125rem;
+  padding: 2.1875rem;
+}
+
+#advice-id {
+  text-align: center;
+  color: var(--Neon-Green);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+#advice-text {
+  font-size: 1.75rem;
+  text-align: center;
+}
+
+picture,
+picture img {
+  width: 100%;
+}
+
+.button-wrapper {
+  position: relative;
+}
+
+#generator-button {
+  background-color: var(--Neon-Green);
+  padding: 1rem;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  transform: translateX(-50%);
+  opacity: 0.8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.2s;
+}
+
+#generator-button:hover {
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(82, 255, 168, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 90%;
+  }
+
+  #advice-text {
+    font-size: 1.25rem;
+    
+  }
+}
