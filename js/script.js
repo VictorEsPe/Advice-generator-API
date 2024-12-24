@@ -8,18 +8,25 @@ generatorButton.addEventListener('click', () => {
   getApiData()
 })
 
-function getApiData() {
-  fetch(apiLink)
-    .then(response => response.json())
-    .then(data => {
-      hideLoadingMessage()
+async function getApiData() {
+  try {
+    const apiResponse = await fetch(apiLink);
+      if (!apiResponse.ok){
+        throw new Error("Ocorreu um erro ao tentar buscar as informações da API");
+      }
 
-      const adviceIdElement = document.querySelector('#advice-id')
-      const adviceTextElement = document.querySelector('#advice-text')
+    const data = await apiResponse.json()
+    hideLoadingMessage()
 
-      adviceIdElement.innerText = `Advice #${data.slip.id}`
-      adviceTextElement.innerText = `"${data.slip.advice}"`
-    })
+    const adviceIdElement = document.querySelector('#advice-id')
+    const adviceTextElement = document.querySelector('#advice-text')
+
+    adviceIdElement.innerText = `Advice #${data.slip.id}`
+    adviceTextElement.innerText = `"${data.slip.advice}"`
+  } catch (error) {
+    console.error("Erro ao tentar buscar as informações da API", error);
+  }
+
 }
 
 function hideLoadingMessage() {
